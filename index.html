@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fred Wiggs Home Cleaning</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: #f5f9ff;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: linear-gradient(90deg, #2b6cb0, #3182ce);
+      color: white;
+      height: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      background: linear-gradient(to right, #ffffff, #cbd5e0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      white-space: nowrap;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      transition: width 0.3s;
+      margin-top: 2px;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      height: 80vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      animation: fadeIn 1.2s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      background: rgba(0,0,0,0.5);
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      max-width: 90%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .section h3 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    .section h3::after {
+      content: '';
+      width: 60px;
+      height: 3px;
+      background: #2b6cb0;
+      display: block;
+      margin: 0.5rem auto;
+      border-radius: 3px;
+    }
+    .section p {
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .services, .contact, .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 2rem;
+      max-width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+    .gallery img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .faq-item {
+      max-width: 700px;
+      margin: 1.5rem auto;
+      text-align: left;
+    }
+    .faq-item details {
+      background: #e2e8f0;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .faq-item summary {
+      font-weight: 600;
+      cursor: pointer;
+      padding: 1rem;
+      font-size: 1.05rem;
+      transition: background 0.3s;
+    }
+    .faq-item summary:hover {
+      background: #cbd5e0;
+    }
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+    .faq-item p {
+      padding: 0 1rem 1rem 1rem;
+      margin: 0;
+    }
+    .testimonial-carousel {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .testimonial-carousel p {
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+    .testimonial-carousel strong {
+      display: block;
+      margin-top: 1rem;
+      text-align: right;
+    }
+    footer {
+      background: #2b6cb0;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Fred Wiggs Cleaning</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#faq">FAQ</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h2>Seattle's Premier Home Cleaning Service</h2>
+  </section>
+
+  <section class="section" id="about">
+    <h3>About Fred</h3>
+    <p>Fred Wiggs is a reliable handyman who also provides exceptional home cleaning throughout the Seattle area. With a wide range of household skills and a dedication to pristine spaces, Fred ensures every job is done with care and precision.</p>
+  </section>
+
+  <section class="section" id="services">
+    <h3>Our Services</h3>
+    <div class="services">
+      <div class="card">
+        <h4>Standard Cleaning</h4>
+        <p>Includes dusting, vacuuming, mopping, and sanitizing surfaces. Perfect for routine maintenance.</p>
+      </div>
+      <div class="card">
+        <h4>Deep Cleaning</h4>
+        <p>Thorough cleaning of hard-to-reach areas including baseboards, vents, and behind appliances.</p>
+      </div>
+      <div class="card">
+        <h4>Move-In/Out</h4>
+        <p>Get your place spotless before you move in or after you leave. Ideal for landlords and tenants.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="gallery">
+    <h3>Gallery</h3>
+    <p>Check out some of our beautifully cleaned homes in Seattle!</p>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Living Room">
+      <img src="https://images.unsplash.com/photo-1600585154205-4ccff28774c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kitchen">
+      <img src="https://images.unsplash.com/photo-1595520291877-9a5d16aaeb5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bathroom">
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <h3>Frequently Asked Questions</h3>
+    <div class="faq-item">
+      <details>
+        <summary>Do you bring your own cleaning supplies?</summary>
+        <p>Yes, we bring all necessary cleaning supplies and equipment unless you prefer we use your own.</p>
+      </details>
+      <details>
+        <summary>How do I schedule a cleaning?</summary>
+        <p>You can schedule a cleaning by emailing us or calling directly. We'll work with your schedule.</p>
+      </details>
+      <details>
+        <summary>Are you insured?</summary>
+        <p>Yes, Fred Wiggs Cleaning is fully licensed and insured for your peace of mind.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="section" id="testimonials">
+    <h3>What Our Clients Say</h3>
+    <div class="testimonial-carousel" id="testimonial-carousel">
+      <p id="testimonial-text">"Fred is a lifesaver! My apartment has never looked this clean. He’s always on time and extremely thorough."</p>
+      <strong id="testimonial-author">- Jamie L., Seattle</strong>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h3>Contact Fred</h3>
+    <p>Ready to bring that fresh clean to your Seattle home?</p>
+    <div class="contact">
+      <div class="card">
+        <h4>Email</h4>
+        <p>fred@wiggscleaning.com</p>
+      </div>
+      <div class="card">
+        <h4>Phone</h4>
+        <p>(555) 123-4567</p>
+      </div>
+      <div class="card">
+        <h4>Service Area</h4>
+        <p>Serving the Seattle Metro Area, 7 days a week.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Fred Wiggs Home Cleaning. Proudly serving Seattle. All rights reserved.
+  </footer>
+
+  <script>
+    const testimonials = [
+      {
+        text: "Fred is a lifesaver! My apartment has never looked this clean. He’s always on time and extremely thorough.",
+        author: "- Jamie L., Seattle"
+      },
+      {
+        text: "I’ve used several cleaning services in the past, but none compare to Fred. He’s professional and also helped fix my leaky faucet!",
+        author: "- Marcus W., Capitol Hill"
+      },
+      {
+        text: "Fred is friendly, fast, and gets the job done right. I highly recommend him for anyone in the Seattle area.",
+        author: "- Naomi P., Ballard"
+      }
+    ];
+
+    let index = 0;
+    setInterval(() => {
+      index = (index + 1) % testimonials.length;
+      document.getElementById("testimonial-text").innerText = testimonials[index].text;
+      document.getElementById("testimonial-author").innerText = testimonials[index].author;
+    }, 5000);
+  </script>
+</body>
+</html>
