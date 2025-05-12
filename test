@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fred Wiggs Home Cleaning</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: #f5f9ff;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: linear-gradient(90deg, #2b6cb0, #3182ce);
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      background: linear-gradient(to right, #ffffff, #cbd5e0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      white-space: nowrap;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      position: relative;
+      padding: 0.3rem 0.5rem;
+    }
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      transition: width 0.3s;
+      margin-top: 2px;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      height: 60vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .hero h2 {
+      font-size: 1.8rem;
+      background: rgba(0,0,0,0.5);
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      max-width: 90%;
+    }
+    .section {
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    .section h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .section h3::after {
+      content: '';
+      width: 60px;
+      height: 3px;
+      background: #2b6cb0;
+      display: block;
+      margin: 0.5rem auto;
+      border-radius: 3px;
+    }
+    .section p {
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .services, .contact, .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      max-width: 300px;
+      flex: 1 1 250px;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .gallery img {
+      width: 100%;
+      max-width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .faq-item {
+      max-width: 700px;
+      margin: 1.5rem auto;
+      text-align: left;
+    }
+    .faq-item details {
+      background: #e2e8f0;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .faq-item summary {
+      font-weight: 600;
+      cursor: pointer;
+      padding: 1rem;
+      font-size: 1.05rem;
+    }
+    .faq-item summary:hover {
+      background: #cbd5e0;
+    }
+    .faq-item p {
+      padding: 0 1rem 1rem;
+      margin: 0;
+    }
+    .testimonial-carousel {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .testimonial-carousel p {
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+    .testimonial-carousel strong {
+      display: block;
+      margin-top: 1rem;
+      text-align: right;
+    }
+    footer {
+      background: #2b6cb0;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1rem;
+      }
+      .hero {
+        height: 50vh;
+      }
+      .hero h2 {
+        font-size: 1.4rem;
+        padding: 0.8rem;
+      }
+      .section h3 {
+        font-size: 1.5rem;
+      }
+      .card {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- Rest of the body remains unchanged -->
